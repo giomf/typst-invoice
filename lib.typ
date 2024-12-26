@@ -93,7 +93,7 @@
         #set align(end)
         Summe:
       ], [#format_currency(if kleinunternehmer {total} else {(1.0 - vat) * total})€], hlinex(start: 2),
-      if not kleinunternehmer [
+      ..if not kleinunternehmer {(
         [],
         [
           #set text(number-type: "old-style")
@@ -103,7 +103,7 @@
         [#format_currency(vat * total)€],
         hlinex(start: 2),
         [],
-      ] else [ ],
+      )} else [ ],
       [
         #set align(end)
         *Gesamt:*
